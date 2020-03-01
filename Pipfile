@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipython = "*"
+pytest-django = "*"
+django-coverage-plugin = "*"
+
+[packages]
+django = "~=2.2"
+django-environ = "~=0.4.5"
+django-model-utils = "~=4.0.0"
+psycopg2-binary = "~=2.8.4"
+psycopg2 = "~=2.8.4"
+pygments = "~=2.5.2"
+
+[scripts]
+manage = "./manage.py"
+app = "./manage.py startapp"
+tests = "./manage.py tests --settings=config.settings.tests"
+server = "./manage.py runserver"
+commit = "./manage.py makemigrations"
+migrate = "./manage.py migrate"
+shell = "./manage.py shell"
+
+[requires]
+python_version = "3.7"
