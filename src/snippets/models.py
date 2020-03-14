@@ -2,6 +2,7 @@ from typing import Tuple
 
 from django.db import models
 
+from folders.models import Folder
 from misc import user_foreign_key
 from snippets import LANGUAGE_CHOICES, STYLE_CHOICES
 from snippets.manager import SnippetManager
@@ -22,6 +23,11 @@ class Snippet(TimeStamp, ReprMixin):
         choices=STYLE_CHOICES,
         default='friendly',
         max_length=100)
+    folder = models.ForeignKey(
+        to=Folder,
+        on_delete=models.CASCADE,
+        related_name='snippets',
+        null=True)
 
     objects: models.Manager = SnippetManager()
 
