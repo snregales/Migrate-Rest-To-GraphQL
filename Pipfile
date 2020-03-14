@@ -10,6 +10,7 @@ django-coverage-plugin = "*"
 
 [packages]
 django = "~=2.2"
+djangorestframework = "~=3.11.0"
 django-environ = "~=0.4.5"
 django-model-utils = "~=4.0.0"
 psycopg2-binary = "~=2.8.4"
