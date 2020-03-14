@@ -13,6 +13,8 @@ from typing import List, Dict, Any
 
 import environ
 
+from config import REST, REST_PAGE
+
 ROOT_DIR = (environ.Path(__file__) - 3)  # **/Migrate-Rest-To-GraphQL
 APPS_DIR = ROOT_DIR.path("src")  # **/Migrate-Rest-To-GraphQL/src
 
@@ -31,7 +33,9 @@ MY_APPS: List[str] = [
     'folders.apps.FolderConfig',
 ]
 
-THIRD_PARTY_APPS: List[str] = []
+THIRD_PARTY_APPS: List[str] = [
+    REST,
+]
 
 DJANGO_APPS: List[str] = [
     'django.contrib.admin',
@@ -120,3 +124,10 @@ USE_TZ: bool = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL: str = '/static/'
+
+# Django Rest Framework
+
+REST_FRAMEWORK: Dict[str, Any] = {
+    'DEFAULT_PAGINATION_CLASS': '{}.PageNumberPagination'.format(REST_PAGE),
+    'PAGE_SIZE': 50,
+}
