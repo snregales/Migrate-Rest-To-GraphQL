@@ -55,6 +55,8 @@ MIDDLEWARE: List[str] = [
 
 ROOT_URLCONF: str = 'config.urls'
 
+AUTH_USER_MODEL: str = 'users.User'
+
 TEMPLATES: List[Dict[str, Any]] = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
