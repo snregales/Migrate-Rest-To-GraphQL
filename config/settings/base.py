@@ -26,8 +26,9 @@ env.read_env(str(ROOT_DIR.path(".postgres")))
 
 # Application definition
 MY_APPS: List[str] = [
-    'snippets.apps.SnippetsConfig',
+    'snippets.apps.SnippetConfig',
     'users.apps.UserConfig',
+    'folders.apps.FolderConfig',
 ]
 
 THIRD_PARTY_APPS: List[str] = []
