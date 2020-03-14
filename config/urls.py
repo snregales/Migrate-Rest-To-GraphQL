@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 from . import REST_URL, REST
+from .routers import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # url path for django rest user authentication
     path('api-auth/', include(REST_URL), name=REST)
 ]
+
+urlpatterns.extend(router.urls)
